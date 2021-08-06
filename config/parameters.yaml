@@ -1,0 +1,28 @@
+pathofact:
+  sample: 
+    - Sample1
+    - Sample2
+    - Sample3
+  project: results # requires user input
+  datadir:  data # requires user input
+  workflow: "complete" #options: "complete", "AMR", "Tox", "Vir"
+  size_fasta: 10000 #Adjustable to preference
+  scripts: "scripts"
+  signalp: "/path/to/signalp-5.0b/bin" # requires user input
+  deepvirfinder: "submodules/DeepVirFinder/dvf.py"
+  tox_hmm: "databases/toxins/combined_Toxin.hmm"
+  tox_lib: "databases/library_HMM_Toxins.csv"
+  tox_threshold: 40 #Bitscore threshold of the toxin prediction, adjustable by user to preference
+  vir_hmm: "databases/virulence/Virulence_factor.hmm"
+  vir_domains: "databases/models_and_domains"
+  plasflow_threshold: 0.7
+  plasflow_minlen: 1000
+  runtime:
+    short: "00:10:00"
+    medium: "01:00:00"
+    long: "04:00:00" # keep 'long' for AMR/Plasmid.smk, Toxin/Toxin.smk, Universal/SignalP.smk, and Virulence/Virulence.smk
+    extra_long: "48:00:00" # extra long time for 'run_VirFinder' and 'run_VirSorter'
+  mem:
+    normal_mem_per_core_gb: "4G"
+    big_mem_cores: 4
+    big_mem_per_core_gb: "30G"

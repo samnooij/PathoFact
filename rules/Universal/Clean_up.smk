@@ -5,6 +5,9 @@ import os
 rule clean_all:
     input: os.path.join(DATA_DIR,"{project}/PathoFact_report/PathoFact_{sample}_predictions.tsv")
     output: os.path.join(DATA_DIR,"{project}/logs/{sample}_compressed.zip")
+    params:
+        runtime=config["pathofact"]["runtime"]["short"],
+        mem=config["pathofact"]["mem"]["normal_mem_per_core_gb"]
     shell: """
         zip -rm {output} {config[pathofact][datadir]}/{wildcards.project}/logs/{wildcards.sample}
         rm -rf {config[pathofact][datadir]}/{wildcards.project}/splitted/{wildcards.sample}

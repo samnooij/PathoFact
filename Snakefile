@@ -1,6 +1,6 @@
 #Snakefile
 
-configfile: "config.yaml"
+configfile: "config/parameters.yaml"
 DATA_DIR=config["pathofact"]["datadir"]
 
 if config["pathofact"]["workflow"] == "complete":

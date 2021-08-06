@@ -19,6 +19,9 @@ rule Prodigal:
         "../../envs/Prodigal.yaml"
     log: 
         os.path.join(DATA_DIR,"{project}/logs/{sample}/Prodigal.log")
+    params:
+        runtime=config["pathofact"]["runtime"]["medium"],
+        mem=config["pathofact"]["mem"]["big_mem_per_core_gb"]
     shell:
         """
         prodigal -i {input} -o {output.GFF} -a {output.ORF} -f gff -p meta &> {log}
@@ -33,6 +36,9 @@ rule mapping_file:
         os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/Prodigal/{sample}.contig")
     message:
         "Generate mapping file: {wildcards.project} - {wildcards.sample}"
+    params:
+        runtime=config["pathofact"]["runtime"]["short"],
+        mem=config["pathofact"]["mem"]["normal_mem_per_core_gb"]
     shell:
         """
         sed -i '/^#/d' {input.GFF}
