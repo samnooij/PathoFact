@@ -17,10 +17,10 @@ dependencies:
   - botocore=1.15.41=pyh9f0ad1d_0
   - brotlipy=0.7.0=py36h8c4c3a4_1000
   - bzip2=1.0.8=h516909a_2
-  - ca-certificates=2020.4.5.1=hecc5488_0
+  - ca-certificates=2021.5.30=ha878542_0
   - cachetools=3.1.1=py_0
   - cairo=1.16.0=hcf35c78_1003
-  - certifi=2020.4.5.1=py36h9f0ad1d_0
+  - certifi=2021.5.30=py36h5fab9bb_0
   - cffi=1.14.0=py36hd463f26_0
   - chardet=3.0.4=py36h9f0ad1d_1006
   - configargparse=1.2.1=pyh9f0ad1d_0
@@ -58,11 +58,13 @@ dependencies:
   - imagemagick=7.0.8_54=pl526h39023e4_0
   - importlib-metadata=1.6.0=py36h9f0ad1d_0
   - importlib_metadata=1.6.0=0
+  - ipython_genutils=0.2.0=py36_0
   - jbig=2.1=h516909a_2002
   - jinja2=2.11.2=pyh9f0ad1d_0
   - jmespath=0.9.5=py_0
   - jpeg=9c=h14c3975_1001
   - jsonschema=3.2.0=py36h9f0ad1d_1
+  - jupyter_core=4.7.1=py36h5fab9bb_0
   - libblas=3.8.0=16_openblas
   - libcblas=3.8.0=16_openblas
   - libcroco=0.6.13=h8d621e5_1
@@ -88,6 +90,7 @@ dependencies:
   - mpi=1.0=mpich
   - mpich=3.3.2=hc856adb_0
   - multidict=4.7.5=py36h516909a_0
+  - nbformat=5.1.3=pyhd8ed1ab_0
   - ncurses=5.9=10
   - networkx=2.4=py_1
   - numpy=1.18.1=py36h7314795_1
@@ -129,10 +132,12 @@ dependencies:
   - setuptools=46.1.3=py36h9f0ad1d_0
   - six=1.14.0=py_1
   - smmap=3.0.2=pyh9f0ad1d_0
-  - snakemake=5.5.4=2
-  - snakemake-minimal=5.5.4=py_2
+  - snakemake=5.10.0=0
+  - snakemake-minimal=5.10.0=py_0
   - sqlite=3.20.1=2
   - tk=8.6.10=hed695b0_0
+  - toposort=1.6=pyhd8ed1ab_0
+  - traitlets=4.3.3=py36h9f0ad1d_1
   - typing_extensions=3.7.4.1=py36h9f0ad1d_3
   - urllib3=1.25.9=py_0
   - wheel=0.34.2=py_1

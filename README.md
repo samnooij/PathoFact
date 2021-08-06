@@ -16,6 +16,9 @@ The files that have been left out are:
  - `scripts/Virulence_factor_model.sav`  
  - `scripts/finalized_model_3f.sav`
 
+For a complete list of changes and short rationale, see
+[this document](Changes_made.md).
+
 # PathoFact v1.0 
 
 PathoFact is an easy-to-use modular pipeline for the metagenomic analyses of toxins, virulence factors and antimicrobial resistance. 
