@@ -92,7 +92,7 @@ checkpoint splitting:
     input:
         os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/renamed/{sample}_ID.faa")
     output:
-        splits=temp(directory(os.path.join(DATA_DIR,"{project}/splitted/{sample}/")))
+        splits=temp(directory(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/")))
     log:
         os.path.join(DATA_DIR,"{project}/logs/{sample}/split_ORF.log")
     params:

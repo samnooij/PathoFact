@@ -10,7 +10,7 @@ import os
 ## deepARG:
 rule run_deepARG:
     input:
-        os.path.join(DATA_DIR,"{project}/splitted/{sample}/{file_i}.fasta")
+        os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/{file_i}.fasta")
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/AMR/deepARG_results/{sample}/{file_i}.out.mapping.ARG"))
     log:
@@ -53,7 +53,7 @@ rule aggregate_deepARG:
 # RGI
 rule run_RGI:
     input:
-        os.path.join(DATA_DIR,"{project}/splitted/{sample}/{file_i}.fasta")
+        os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/{file_i}.fasta")
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/AMR/RGI_results/{sample}/{file_i}.RGI.txt"))
     log:

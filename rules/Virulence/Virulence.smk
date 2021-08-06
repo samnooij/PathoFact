@@ -7,7 +7,7 @@ import os
 rule run_HMM_vir:
     input:
         hmm=config["pathofact"]["vir_hmm"],
-        renamed=os.path.join(DATA_DIR,"{project}/splitted/{sample}/{file_i}.fasta")
+        renamed=os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/{file_i}.fasta")
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/VIRULENCE/HMM_virulence/{sample}/{file_i}.hmmscan"))
     log:
@@ -137,7 +137,7 @@ rule HMM_VIR_finalformat:
 ##########################
 rule AAC:
     input:
-        os.path.join(DATA_DIR,"{project}/splitted/{sample}/{file_i}.fasta")
+        os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/{file_i}.fasta")
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/VIRULENCE/classifier_virulence/{sample}/{file_i}_AAC.txt"))
     log:
@@ -153,7 +153,7 @@ rule AAC:
 
 rule DPC:
     input:
-        os.path.join(DATA_DIR,"{project}/splitted/{sample}/{file_i}.fasta")
+        os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/{file_i}.fasta")
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/VIRULENCE/classifier_virulence/{sample}/{file_i}_DPC.txt"))
     log:
@@ -169,7 +169,7 @@ rule DPC:
 
 rule CTDC:
     input:
-        os.path.join(DATA_DIR,"{project}/splitted/{sample}/{file_i}.fasta")
+        os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/{file_i}.fasta")
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/VIRULENCE/classifier_virulence/{sample}/{file_i}_CTDC.txt"))
     log:
@@ -185,7 +185,7 @@ rule CTDC:
 
 rule CTDT:
     input:
-        os.path.join(DATA_DIR,"{project}/splitted/{sample}/{file_i}.fasta")
+        os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/{file_i}.fasta")
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/VIRULENCE/classifier_virulence/{sample}/{file_i}_CTDT.txt"))
     log:
@@ -201,7 +201,7 @@ rule CTDT:
 
 rule CTDD:
     input:
-        os.path.join(DATA_DIR,"{project}/splitted/{sample}/{file_i}.fasta")
+        os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/{file_i}.fasta")
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/VIRULENCE/classifier_virulence/{sample}/{file_i}_CTDD.txt"))
     log:
@@ -277,7 +277,7 @@ def aggregate_classifier(wildcards):
 
 rule format_classifier:
     input:
-        aggregate_classifier 
+        aggregate_classifier
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/VIRULENCE/classifier_virulence/{sample}_classifier_results_format.tsv"))
     params:

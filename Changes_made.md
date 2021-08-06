@@ -74,6 +74,25 @@ The following line was added to the [profile](config/config.yaml) to use it:
 cluster-status: "slurm-cluster-status/slurm-cluster-status.py"
 ```
 
+# 4. Save split fasta files in one place
+
+By default, PathoFact splits large input (FASTA) files into 
+smaller files to speed up processing.
+However, these split files are stored in two different locations,
+causing more disk space to be used than is necessary.
+To fix this, I changed the path to which these split files are
+written and from which they are read so that there is only one
+place to put them.
+The rules that I changed are:
+
+ - `rules/Universal/Preprocessing.smk`: checkpoint splitting  
+ - `rules/AMR/AMR.smk`: run_deepARG, run_RGI  
+ - `rules/Toxin/Toxin.smk`: run_HMM_tox  
+ - `rules/Virulence/Virulence.smk`: run_HMM_vir, AAC, DPC, CTDC, CTDT, CTDD
+
+Now all these files are stored under:
+`{project}/PathoFact_intermediate/splitted/`.
+
 # Shell commands used to make updates
 
 ```bash

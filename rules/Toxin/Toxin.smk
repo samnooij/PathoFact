@@ -7,7 +7,7 @@ import os
 rule run_HMM_tox:
     input:
         hmm=config["pathofact"]["tox_hmm"],
-        renamed=os.path.join(DATA_DIR,"{project}/splitted/{sample}/{file_i}.fasta")
+        renamed=os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/splitted/{sample}/{file_i}.fasta")
     output:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/TOXIN/HMM_toxin/{sample}/{file_i}.hmmscan"))
     log:
