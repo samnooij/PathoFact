@@ -54,6 +54,26 @@ already are:
 
 So these lines have been added.
 
+# 3. Use `slurm-cluster-status`
+
+On the HPC cluster of the Leiden University Medical Center,
+snakemake does not always communicate well with SLURM and
+using a custom script can help.
+(It should not hurt to use this, but not everybody may need it.)
+
+The script is [on GitHub](https://github.com/LUMC/slurm-cluster-status)
+and was downloaded to the current directory using the command:
+
+```bash
+git clone https://github.com/LUMC/slurm-cluster-status.git
+```
+
+The following line was added to the [profile](config/config.yaml) to use it:
+
+```yaml
+cluster-status: "slurm-cluster-status/slurm-cluster-status.py"
+```
+
 # Shell commands used to make updates
 
 ```bash
@@ -74,4 +94,10 @@ touch config/config.yaml
 
 # the 'log' directory is necessary to work with the profile config
 mkdir log
+
+# 3. (optional) use slurm-cluster-status script
+# Download the script from GitHub
+git clone https://github.com/LUMC/slurm-cluster-status.git
+# Then add the line to the profile configuration file
+echo "cluster-status: \"slurm-cluster-status/slurm-cluster-status.py\"" >> config/config.yaml
 ```

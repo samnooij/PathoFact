@@ -4,3 +4,5 @@ use-conda: true
 latency-wait: 120
 keep-going: true
 cluster: "sbatch --parsable -N 1 -n 1 -c {threads} --mem={params.mem} -t {params.runtime} -D . -e log/{name}-{jobid}.err -o log/{name}-{jobid}.out --mail-type=FAIL --mail-user=s.nooij@lumc.nl"
+cluster-status: slurm-cluster-status/slurm-cluster-status.py
+cluster-status: "slurm-cluster-status/slurm-cluster-status.py"
