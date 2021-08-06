@@ -93,7 +93,7 @@ The rules that I changed are:
 Now all these files are stored under:
 `{project}/PathoFact_intermediate/splitted/`.
 
-## 4.2
+## 4.2. Make split output explicit
 
 Related to the split files, the rules 'splitcontig' from
 [`Preprocessing-contig.smk`](rules/Universal/Preprocessing-contig.smk)
@@ -103,6 +103,21 @@ in their snakefiles under 'output', but did not use these
 names in the shell command.
 These have been adjusted to make the output more explicit.  
 (This was a manual change, I have no code for this.)
+
+# 5. Reserve extra time for very long jobs
+
+The rules 'run_VirFinder' and 'run_VirSorter'
+from [`Phage.smk`](rules/AMR/Phage.smk) may take way longer
+than the default 2 hours for large datasets.
+These two jobs have been assigned a new class of runtimes
+from the configuration file: 'extra_long'.
+The time has been set to 48 hours, but can be adjusted if
+necessary.
+
+(This has also been changed manually.
+Edit the line `    extra_long: "48:00:00"` near the bottom
+of [`parameters.yaml`](config/parameters.yaml) to
+change this to any time you need.)
 
 # Shell commands used to make updates
 

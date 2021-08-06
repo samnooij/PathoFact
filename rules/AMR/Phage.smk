@@ -17,8 +17,8 @@ rule run_VirSorter:
     log:
         os.path.join(DATA_DIR,"{project}/logs/{sample}/VIRSorter_global-phage-signal.log")
     params:
-        runtime=config["pathofact"]["runtime"]["long"],
-        mem=config["pathofact"]["mem"]["big_mem_per_core_gb"]
+        runtime=config["pathofact"]["runtime"]["extra_long"],
+        mem=config["pathofact"]["mem"]["normal_mem_per_core_gb"]
     conda:
         "../../envs/VirSorter.yaml"
     threads:
@@ -56,7 +56,7 @@ rule run_VirFinder:
     log:
         os.path.join(DATA_DIR,"{project}/logs/{sample}/{file_i}.fasta_gt1bp_dvfpred.log")
     params:
-        runtime=config["pathofact"]["runtime"]["long"],
+        runtime=config["pathofact"]["runtime"]["extra_long"],
         mem=config["pathofact"]["mem"]["big_mem_per_core_gb"]
     conda:
         "../../envs/DeepVirFinder.yaml"
