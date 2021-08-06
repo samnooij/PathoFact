@@ -111,9 +111,19 @@ For each sample, the corresponding input files should have the same basename, e.
 
 To run PathoFact you need to adjust some parameters in `config.yaml`.
 
-- `sample`: This is a list of sample names, e.g. `sample: ["SAMPLE_A","SAMPLE_B"]`
+- `sample`: This is a list of sample names, e.g.
+
+```yaml
+  sample:
+    - Sample1
+    - Sample2
+```
+
+(Where 'Sample1' and 'Sample2' match the file names
+`Sample1.fna` and `Sample2.fna` in the input directory.)
+
 - `project`: A unique project name which will be used as the name of the output directory in `datapath` path (see below).
-- `datapath`: Path to directory containing the sample data; the output directory will be created there.
+- `datadir`: Path to directory containing the sample data; the output directory will be created there.
 - `workflow`: Pathofact can run the complete pipeline (default) or a specific step:
     - "complete": complete pipeline = toxin + virulence + AMR + MGE prediction
     - "Tox": toxin prediction
@@ -122,32 +132,23 @@ To run PathoFact you need to adjust some parameters in `config.yaml`.
 
 ### Execution
 
-Basic command to run the pipeline using `<cores>` CPUs:
+Basic command to run the pipeline on SLURM:
 
 ```bash
 # activate the env
 conda activate PathoFact
 # run the pipeline
-# set <cores> to the number of cores to use, e.g. 10
-snakemake -s Snakefile --use-conda --reason --cores <cores> -p 
+snakemake --profile config
 ```
 
 **NOTE**: Add parameter `-n` (or `--dry-run`) to the command to see which steps will be executed without running them.
 
 **NOTE**: Add `--configfile <configfile.yaml>` to use a different config file than `config.yaml`. 
 
-**NOTE**: It is advised to run the pipeline using multiple CPUs or CPUs with "higher" memory.
+For more options, see the [snakemake documentation](https://snakemake.readthedocs.io/en/stable/index.html).  
+The default settings are stored in [config/config.yaml](config/config.yaml).
 
-For more options, see the [snakemake documentation](https://snakemake.readthedocs.io/en/stable/index.html).
 
-### Execution on a cluster
-
-The pipeline can be run on a cluster using `slurm`.
-The command can be found in the script `cluster.sh` which can also be used to submit the jobs to the cluster.
-
-```bash
-sbatch cluster.sh
-```
 ### Test module
 
 To test for the correct installation of the pipeline the testmodule can be run:
