@@ -96,7 +96,7 @@ Now all these files are stored under:
 ## 4.2. Make split output explicit
 
 Related to the split files, the rules 'splitcontig' from
-[`Preprocessing-contig.smk`](rules/Universal/Preprocessing-contig.smk)
+[`Preprocessing_contig.smk`](rules/Universal/Preprocessing_contig.smk)
 and 'splitplasmid' from
 [`Plasmid.smk`](rules/AMR/Plasmid.smk) have named variables
 in their snakefiles under 'output', but did not use these
