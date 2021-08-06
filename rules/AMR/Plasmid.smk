@@ -38,7 +38,7 @@ checkpoint splitplasmid:
         "../../envs/Biopython.yaml"
     shell:
         """
-         python {config[pathofact][scripts]}/split.py {input} {params.split} {output}
+         python {config[pathofact][scripts]}/split.py {input} {params.split} {output.split}
         """
 
 # PlasFlow Plasmid prediction

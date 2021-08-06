@@ -55,7 +55,7 @@ checkpoint splitcontig:
         os.path.join(DATA_DIR,"{project}/logs/{sample}/split_contig.log")
     shell:
         """
-         python {config[pathofact][scripts]}/split.py {input} {params.split} {output} &> {log}
+         python {config[pathofact][scripts]}/split.py {input} {params.split} {output.split} &> {log}
         """
 
 

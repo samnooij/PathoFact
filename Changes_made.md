@@ -93,6 +93,17 @@ The rules that I changed are:
 Now all these files are stored under:
 `{project}/PathoFact_intermediate/splitted/`.
 
+## 4.2
+
+Related to the split files, the rules 'splitcontig' from
+[`Preprocessing-contig.smk`](rules/Universal/Preprocessing-contig.smk)
+and 'splitplasmid' from
+[`Plasmid.smk`](rules/AMR/Plasmid.smk) have named variables
+in their snakefiles under 'output', but did not use these
+names in the shell command.
+These have been adjusted to make the output more explicit.  
+(This was a manual change, I have no code for this.)
+
 # Shell commands used to make updates
 
 ```bash
