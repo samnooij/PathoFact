@@ -1,0 +1,12 @@
+name: Prodigal
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=0_gnu
+  - libgcc-ng=9.2.0=h24d8f2e_2
+  - libgomp=9.2.0=h24d8f2e_2
+  - prodigal=2.6.3=h516909a_2
+

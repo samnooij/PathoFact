@@ -1,0 +1,50 @@
+name: DeepARG_env_new
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=1_gnu
+  - boost=1.68.0
+  - boost-cpp=1.68.0
+  - bzip2=1.0.8
+  - ca-certificates=2020.6.20
+  - certifi=2019.11.28
+  - diamond=0.9.24
+  - icu=58.2
+  - libblas=3.8.0
+  - libcblas=3.8.0
+  - libffi=3.3
+  - libgcc-ng=9.3.0
+  - libgfortran-ng=7.5.0
+  - libgomp=9.3.0
+  - liblapack=3.8.0
+  - libopenblas=0.3.10
+  - libstdcxx-ng=9.3.0
+  - ncurses=6.2
+  - numpy=1.16.5
+  - pip=20.1.1
+  - python=2.7.18
+  - python_abi=2.7
+  - readline=8.0
+  - setuptools=44.0.0
+  - sqlite=3.32.3
+  - tk=8.6.10
+  - wheel=0.34.2
+  - xz=5.2.5
+  - zlib=1.2.11
+  - pip:
+    - biopython==1.73
+    - deeparg==1.0.1
+    - idna==2.6
+    - joblib==0.13.0
+    - requests==2.18.4
+    - scikit-learn==0.19.1
+    - six==1.15.0
+    - tabulate==0.8.7
+    - theano==0.8.2
+    - tqdm==4.48.2
+    - urllib3==1.22
+prefix: /home/users/ldenies/apps/miniconda3/envs/DeepARG_env_new
+

@@ -1,0 +1,20 @@
+#
+.git/**
+**/.snakemake/**
+**/__pycache__/**
+# log files
+*.log
+slurm-*.out
+# tmp files
+*.tmp
+*.swp
+tmp/**
+# macOS Files
+.DS_Store
+# test data
+test/output_test/**
+
+# Don't mess with the databases
+databases/*
+localDB/*
+scripts/deeparg_data/*
