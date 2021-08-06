@@ -119,6 +119,27 @@ Edit the line `    extra_long: "48:00:00"` near the bottom
 of [`parameters.yaml`](config/parameters.yaml) to
 change this to any time you need.)
 
+# 6. Reserve CPU threads for DeepARG
+
+PathoFact uses [DeepARG](https://bitbucket.org/gusphdproj/deeparg-ss)
+to predict antibiotic resistance genes, which in turn uses
+[DIAMOND](https://github.com/bbuchfink/diamond).
+Now DIAMOND by default uses the maximum number of CPU threads available
+and DeepARG has no way of setting the threads manually.
+(This is a [known issue](https://bitbucket.org/gusphdproj/deeparg-ss/issues/16/add-option-to-set-diamond-threads).)
+
+So now, by default, PathoFact reserves 1 CPU thread on the
+HPC node, the node may have 48 threads available,
+DeepARG starts using 48 threads on a system that may also
+have other jobs running. This is generally not a good idea
+and may get several jobs crashed.
+
+As a workaround, in the meantime, I'm reserving 24 threads
+for this rule, because most of the nodes on the local HPC
+cluster have 24 threads.
+
+(This was also a manual change, with no code.)
+
 # Shell commands used to make updates
 
 ```bash

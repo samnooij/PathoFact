@@ -15,6 +15,7 @@ rule run_deepARG:
         temp(os.path.join(DATA_DIR,"{project}/PathoFact_intermediate/AMR/deepARG_results/{sample}/{file_i}.out.mapping.ARG"))
     log:
         os.path.join(DATA_DIR,"{project}/logs/{sample}/{file_i}.out.mapping.ARG.log")
+    threads: 24
     params:
         runtime=config["pathofact"]["runtime"]["medium"],
         mem=config["pathofact"]["mem"]["normal_mem_per_core_gb"]
