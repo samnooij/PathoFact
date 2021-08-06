@@ -119,4 +119,9 @@ mkdir log
 git clone https://github.com/LUMC/slurm-cluster-status.git
 # Then add the line to the profile configuration file
 echo "cluster-status: \"slurm-cluster-status/slurm-cluster-status.py\"" >> config/config.yaml
+
+# 4. save all split files in the same place
+# (this command should change all references of 'splitted' to the same
+# directory, although I didn't test this!)
+sed -i 's/{project}\/splitted/{project}\/PathoFact_intermediate\/splitted/g' rules/*/*.smk
 ```
