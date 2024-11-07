@@ -1,3 +1,13 @@
+⚠️⚠️⚠️⚠️⚠️
+
+This is just a fork of the original PathoFact repository, which is hosted here: 
+[https://git-r3lab.uni.lu/laura.denies/PathoFact](https://git-r3lab.uni.lu/laura.denies/PathoFact)
+
+This repository is not maintained and I cannot help with questions and problems posted in the issues section.
+Sorry!
+
+⚠️⚠️⚠️⚠️⚠️
+
 # Alternative PathoFact code
 
 This repository contains updated code for PathoFact to make it work
